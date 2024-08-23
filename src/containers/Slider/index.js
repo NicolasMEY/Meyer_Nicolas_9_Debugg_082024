@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
-
 import { useData } from "../../contexts/DataContext";
 import { getMonth } from "../../helpers/Date";
-
 import "./style.scss";
 
 const Slider = () => {
   const { data } = useData();
   const [index, setIndex] = useState(0);
-  const byDateDesc = data?.focus.sort((evtA, evtB) =>
-    new Date(evtA.date) < new Date(evtB.date) ? -1 : 0
+
+  // Trie les évènements par date dans l'ordre décroissant
+  const byDateDesc = data?.focus.sort(
+    (evtA, evtB) => new Date(evtA.date) - new Date(evtB.date) // Changer pour décroissant, La fonction de comparaison new Date(evtB.date) - new Date(evtA.date) trie les événements de la date la plus récente à la date la plus ancienne. Le résultat est un tableau d'événements triés dans l'ordre décroissant.
+    // < new Date(evtB.date) ? -1 : 0
   );
 
   // Trie le tableau focus contenu dans l'objet data par date dans l'ordre décroissant. Du plus ancien au plus récent.
@@ -29,7 +30,6 @@ const Slider = () => {
   useEffect(
     () => {
       const intervalId = setInterval(nextCard, 5000);
-
       return () => clearInterval(intervalId);
     },
     // eslint-disable-next-line

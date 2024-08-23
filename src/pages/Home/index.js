@@ -132,7 +132,7 @@ const Page = () => {
       <footer className="row">
         <div className="col presta">
           <h3>Notre derniére prestation</h3>
-          // RAJOUT
+          {/* RAJOUT */}
           {last?.cover && last?.title && (
             <EventCard
               data-testid="last-event-card"

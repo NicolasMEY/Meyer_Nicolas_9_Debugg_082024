@@ -84,7 +84,6 @@ describe("When Events is created", () => {
 
       await screen.findByText("Conférence #productCON");
       expect(screen.queryByText("Forum #productCON")).not.toBeInTheDocument();
-      // ProblèmeLe test échoue car screen.queryByText retourne l'élément même si on s'attend à ce qu'il ne soit pas présent dans le document. Il est possible que l'élément n'ait pas été supprimé ou que le test soit lancé avant que les mises à jour du DOM ne soient complètes.
     });
   });
 
