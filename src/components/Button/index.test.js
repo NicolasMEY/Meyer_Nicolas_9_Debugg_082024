@@ -35,3 +35,16 @@ describe("When a button is created", () => {
     });
   });
 });
+
+// Désactivation du bouton = Ajout d'un test unitaire qui s'assure que le bouton est correctement désactivé lorsque la prop disabled est définie sur true.
+describe("Button component", () => {
+  it("should render the button as disabled when the 'disabled' prop is true", () => {
+    render(
+      <Button disabled={true} title="Disabled Button">
+        Click Me
+      </Button>
+    );
+    const buttonElement = screen.getByTestId("button-test-id");
+    expect(buttonElement).toBeDisabled();
+  });
+});

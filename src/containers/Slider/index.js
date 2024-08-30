@@ -22,9 +22,7 @@ const Slider = () => {
       prevIndex < byDateDesc.length - 1 ? prevIndex + 1 : 0
     );
 
-    // NextCard : utilise la fonction setIndex pour mettre à jour l'index.
-    // L'index est incrémenté de 1 s'il est inférieur à la longueur du tableau trié,
-    // sinon il est réinitialisé à 0.
+    // NextCard : prevIndex < byDateDesc.length - 1 ? prevIndex + 1 : 0 : Si l'index actuel est inférieur au dernier index du tableau, il passe à l'index suivant. Sinon, il réinitialise l'index à 0 pour revenir au début du tableau.
   };
 
   useEffect(
